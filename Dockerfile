@@ -92,6 +92,9 @@ COPY crates/relay-types/Cargo.toml crates/relay-types/Cargo.toml
 COPY crates/client-info/Cargo.toml crates/client-info/Cargo.toml
 COPY crates/preview-proxy/Cargo.toml crates/preview-proxy/Cargo.toml
 COPY crates/remote-info/Cargo.toml crates/remote-info/Cargo.toml
+COPY crates/embedded-ssh/Cargo.toml crates/embedded-ssh/Cargo.toml
+COPY crates/desktop-bridge/Cargo.toml crates/desktop-bridge/Cargo.toml
+COPY crates/relay-tunnel-core/Cargo.toml crates/relay-tunnel-core/Cargo.toml
 
 COPY crates/api-types/ crates/api-types/
 COPY crates/db/ crates/db/
@@ -121,6 +124,9 @@ COPY crates/relay-types/ crates/relay-types/
 COPY crates/client-info/ crates/client-info/
 COPY crates/preview-proxy/ crates/preview-proxy/
 COPY crates/remote-info/ crates/remote-info/
+COPY crates/embedded-ssh/ crates/embedded-ssh/
+COPY crates/desktop-bridge/ crates/desktop-bridge/
+COPY crates/relay-tunnel-core/ crates/relay-tunnel-core/
 COPY assets/ assets/
 COPY --from=fe-builder /app/packages/local-web/dist packages/local-web/dist
 
