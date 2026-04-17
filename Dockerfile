@@ -21,8 +21,7 @@ COPY packages/local-web/package.json packages/local-web/package.json
 COPY packages/ui/package.json packages/ui/package.json
 COPY packages/web-core/package.json packages/web-core/package.json
 
-RUN --mount=type=cache,id=vibe-kanban-pnpm,target=/pnpm/store \
-    pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 COPY packages/local-web/ packages/local-web/
 COPY packages/public/ packages/public/
@@ -114,10 +113,7 @@ COPY crates/ws-bridge/ crates/ws-bridge/
 COPY assets/ assets/
 COPY --from=fe-builder /app/packages/local-web/dist packages/local-web/dist
 
-RUN --mount=type=cache,id=vibe-kanban-cargo-registry,target=/usr/local/cargo/registry \
-    --mount=type=cache,id=vibe-kanban-cargo-git,target=/usr/local/cargo/git \
-    --mount=type=cache,id=vibe-kanban-workspace-target,target=/app/target \
-    cargo build --locked --release --bin server \
+RUN cargo build --locked --release --bin server \
  && cp /app/target/release/server /usr/local/bin/server
 
 FROM debian:bookworm-slim AS runtime
