@@ -89,6 +89,7 @@ COPY crates/worktree-manager/Cargo.toml crates/worktree-manager/Cargo.toml
 COPY crates/ws-bridge/Cargo.toml crates/ws-bridge/Cargo.toml
 COPY crates/relay-client/Cargo.toml crates/relay-client/Cargo.toml
 COPY crates/relay-types/Cargo.toml crates/relay-types/Cargo.toml
+COPY crates/client-info/Cargo.toml crates/client-info/Cargo.toml
 
 COPY crates/api-types/ crates/api-types/
 COPY crates/db/ crates/db/
@@ -115,6 +116,7 @@ COPY crates/worktree-manager/ crates/worktree-manager/
 COPY crates/ws-bridge/ crates/ws-bridge/
 COPY crates/relay-client/ crates/relay-client/
 COPY crates/relay-types/ crates/relay-types/
+COPY crates/client-info/ crates/client-info/
 COPY assets/ assets/
 COPY --from=fe-builder /app/packages/local-web/dist packages/local-web/dist
 
